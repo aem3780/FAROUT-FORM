@@ -1,0 +1,124 @@
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: rgb(23,11,56);
+    background: radial-gradient(circle, rgba(23,11,56,1) 0%, rgba(6,1,20,1) 100%);
+  }
+
+  h1 {
+    font-size: 15vh;
+    margin-left: 100px;
+    line-height: .8;
+    color: #F0EFED;
+    margin-bottom: 50px;
+  }
+
+  label {
+    display: block;
+  }
+
+  #results{
+    line-height: 1.2;
+  }
+
+  input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    padding: 16px;
+    width: 75vw;
+    box-sizing: border-box;
+    color: #F0EFED;
+    background-color: transparent;
+    border-color: #ccc;
+  }
+
+  input[type=text]::placeholder {
+    color: #F0EFED;
+    opacity: .5;
+  }
+
+  input[type=submit] {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 32px;
+    padding: 16px;
+    cursor: pointer;
+  }
+
+  form {
+    margin-left: 100px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  
+  .submit-btn {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 16px;
+    margin-left: 16px;
+  }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -99;
+    width: 140%;
+}
+
+nav {
+    margin: 32px 56px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.help-icon {
+    border-radius: 50px;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.help-icon:hover{
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.help-icon {
+    padding: 6px;
+    transition: ease all 0.5s;
+}
+
+
+
+
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}

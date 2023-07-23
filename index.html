@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>FAR OUT - Share your memory</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div class="background">
+            <video autoplay loop muted class="background">
+                <source src="./assets/smaller-bg-2.mp4"/>
+            </video>
+        </div>
+        <nav>
+            <img src="./assets/logo.png" height="20">
+            <a href="./info.html"><img src="./assets/help.png" class="help-icon" style=" border: 2px solid white;
+                                                    background: rgba(255, 255, 255, 0.15);
+                                                    padding: 4px;
+                                                    border-radius: 50px;
+                                                    opacity: 0.6;"></a>
+        </nav>
+
+          <h1>What is<br> your most<br> <span id="results">proud</span> <br> memory?</h1>
+          <form id="memoryForm" method="POST" action="https://script.google.com/macros/s/AKfycbwYi7NPsL1pin7n_6P8FMbxUSG3A8mhJIooCYjC8RJ50NIJ-zjzWCHh_i8owC_bEP0DYw/exec">
+            <label>
+              <input type="text" name="memoryText" placeholder="Type your memory here" maxlength="300">
+              <input class="submit-btn" type="submit" value="→">
+            </label>
+          </form>
+      </body>
+          <script>
+          const results = document.querySelector('#results');
+          const array = ["tasty", "beautiful", "silly", "crazy", "awkward", "proud", "spooky", "joyful"];
+          const rndInt = Math.floor(Math.random() * 8);
+          function randomType() {
+              return array[rndInt];
+          }
+                  results.textContent = randomType();
+
+        if(results.textContent == "joyful"){
+            document.getElementById('results').style.color = "#09D379";
+        }
+
+        if(results.textContent == "proud"){
+            document.getElementById('results').style.color = "#065CE4";
+        }
+
+        if(results.textContent == "awkward"){
+            document.getElementById('results').style.color = "#05B0DB";
+        }
+        
+        if(results.textContent== "beautiful"){
+            document.getElementById('results').style.color = "#AE01FF";
+        }
+
+        if(results.textContent == "crazy"){
+            document.getElementById('results').style.color = "#FF3270";
+        }
+
+        if(results.textContent == "silly"){
+            document.getElementById('results').style.color = "#48B1AD";
+        }
+
+        if(results.textContent == "spooky"){
+            document.getElementById('results').style.color = "#DF312F";
+        }
+
+        if(results.textContent == "tasty"){
+            document.getElementById('results').style.color = "#FFC52E";
+        }
+
+                
+        window.addEventListener("load", function() {
+        const form = document.getElementById('memoryForm');
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const action = e.target.action;
+            fetch(action, {
+            method: 'POST',
+            body: data,
+            })
+            .then(() => {
+            alert("Your memory has been submitted!");
+            window.location.reload();
+            })
+                
+        });
+        });
+
+
+      </script>
+    </html>
